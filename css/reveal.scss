@@ -6,6 +6,7 @@
  * Copyright (C) Hakim El Hattab, https://hakim.se
  */
 
+@use "sass:math";
 @import 'layout';
 
 /*********************************************
@@ -247,11 +248,11 @@ $controlsArrowAngleActive: 36deg;
 
 @mixin controlsArrowTransform( $angle ) {
 	&:before {
-		transform: translateX(($controlArrowSize - $controlArrowLength)/2) translateY(($controlArrowSize - $controlArrowThickness)/2) rotate( $angle );
+		transform: translateX(math.div($controlArrowSize - $controlArrowLength, 2)) translateY(math.div($controlArrowSize - $controlArrowThickness, 2)) rotate( $angle );
 	}
 
 	&:after {
-		transform: translateX(($controlArrowSize - $controlArrowLength)/2) translateY(($controlArrowSize - $controlArrowThickness)/2) rotate( -$angle );
+		transform: translateX(math.div($controlArrowSize - $controlArrowLength, 2)) translateY(math.div($controlArrowSize - $controlArrowThickness, 2)) rotate( -$angle );
 	}
 }
 
@@ -300,11 +301,11 @@ $controlsArrowAngleActive: 36deg;
 		left: 0;
 		width: $controlArrowLength;
 		height: $controlArrowThickness;
-		border-radius: $controlArrowThickness/2;
+		border-radius: math.div($controlArrowThickness, 2);
 		background-color: currentColor;
 
 		transition: all 0.15s ease, background-color 0.8s ease;
-		transform-origin: floor(($controlArrowThickness/2)*10)/10 50%;
+		transform-origin: floor(math.div($controlArrowThickness, 2)*10)/10 50%;
 		will-change: transform;
 	}
 
