@@ -21,7 +21,7 @@ $backgroundColor: #fff;
 $mainColor: #222;
 $headingColor: #222;
 
-$mainFontSize: 36px;
+$mainFontSize: 32px;
 $mainFont: 'Source Sans Pro', Helvetica, sans-serif;
 $headingFont: 'Source Sans Pro', Helvetica, sans-serif;
 $headingTextShadow: none;
@@ -45,10 +45,10 @@ $heading4Size: 1.0em;
 @import "../template/theme";
 // ---------------------------------------------
 
-.reveal h1::before { content: "# "; }
-.reveal h2::before { content: "## "; }
-.reveal h3::before { content: "### "; }
-.reveal h4::before { content: "#### "; }
-.reveal h5::before { content: "##### "; }
-.reveal h6::before { content: "###### "; }
+.reveal section[data-markdown] h1::before { content: "# "; }
+.reveal section[data-markdown] h2::before { content: "## "; }
+.reveal section[data-markdown] h3::before { content: "### "; }
+.reveal section[data-markdown] h4::before { content: "#### "; }
+.reveal section[data-markdown] h5::before { content: "##### "; }
+.reveal section[data-markdown] h6::before { content: "###### "; }
 
